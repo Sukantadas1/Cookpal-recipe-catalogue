@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Cookpal-recipe-catalogue</title>
+  </head>
+  <header>
+    <h1>Recipe Catalogue</h1>
+  </header>
+
+  <body>
+    <div class="search-bar">
+      <label for="search">Search For Recipes</label>
+      <input type="text" id="search" oninput="filterRecipes()" />
+    </div>
+
+    <div class="filter-buttons">
+      <button onclick="filterByType('all')">Show All</button>
+      <button onclick="filterByType('veg')">Show Only Veg</button>
+      <button onclick="filterByType('non-veg')">Show Only Non-Veg</button>
+
+      <label for="above45">Rating Above 4.5:</label>
+      <input
+        type="radio"
+        name="ratingFilter"
+        id="above45"
+        onchange="filterByRating('above45')"
+      />
+
+      <label for="below40">Rating Below 4.0:</label>
+      <input
+        type="radio"
+        name="ratingFilter"
+        id="below40"
+        onchange="filterByRating('below40')"
+      />
+    </div>
+
+    <div id="recipeContainer" class="recipe-container"></div>
+
+    <div class="drawer" id="drawer">
+      <div class="drawer-content">
+        <h2>Filter Options</h2>
+        <button onclick="filterByType('all')">Show All</button>
+        <button onclick="filterByType('veg')">Show Only Veg</button>
+        <button onclick="filterByType('non-veg')">Show Only Non-Veg</button>
+
+        <label for="above45">Rating Above 4.5:</label>
+        <input
+          type="radio"
+          name="ratingFilterDrawer"
+          id="above45"
+          onchange="filterByRating('above45')"
+        />
+
+        <label for="below40">Rating Below 4.0:</label>
+        <input
+          type="radio"
+          name="ratingFilterDrawer"
+          id="below40"
+          onchange="filterByRating('below40')"
+        />
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
